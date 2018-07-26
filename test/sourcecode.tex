@@ -1,0 +1,386 @@
+\begin{sourcecode}[]{c}{}
+#include <stdio.h>
+int main(){
+	int i, j, rows;
+	
+	printf("Enter number of rows: ");
+	scanf("%d",&rows);
+	
+	for(i=1; i<=rows; ++i){
+		for(j=1; j<=i; ++j){
+			printf("* ");
+		}
+		printf("\n");
+	}
+	return 0;
+}
+\end{sourcecode}
+
+\begin{sourcecode}[]{c}{Codigo en c.}
+	#include <stdio.h>
+	int main(){
+		int i, j, rows;
+		
+		printf("Enter number of rows: ");
+		scanf("%d",&rows);
+		
+		for(i=1; i<=rows; ++i){
+			for(j=1; j<=i; ++j){
+				printf("* ");
+			}
+			printf("\n");
+		}
+		return 0;
+	}
+\end{sourcecode}
+
+\newpage
+
+\begin{sourcecode}[]{csharp}{Ejemplo en C\#.}
+/*
+* C# Program to Get a Number and Display the Sum of the Digits 
+*/
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace Program
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			int num, sum = 0, r;
+			Console.WriteLine("Enter a Number : ");
+			num = int.Parse(Console.ReadLine());
+			while (num != 0)
+			{
+				r = num % 10;
+				num = num / 10;
+				sum = sum + r;
+			}
+			Console.WriteLine("Sum of Digits of the Number : "+sum);
+			Console.ReadLine();
+			
+		}
+	}
+}
+\end{sourcecode}
+
+\newpage
+\begin{sourcecode}{cpp}{Suma en C++.}
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int n, sum = 0;
+	
+	cout << "Enter a positive integer: ";
+	cin >> n;
+	
+	for (int i = 1; i <= n; ++i) {
+		sum += i;
+	}
+	
+	cout << "Sum = " << sum;
+	return 0;
+}
+\end{sourcecode}
+
+\begin{sourcecode}{docker}{Docker.}
+version: '2'
+services:
+web:
+build: .
+ports:
+- "5000:5000"
+volumes:
+- .:/code
+- logvolume01:/var/log
+links:
+- redis
+redis:
+image: redis
+volumes:
+logvolume01: {}
+\end{sourcecode}
+
+\begin{sourcecode}{plaintext}{Resultado del análiis con TEFAME.}
+TEFAME - Toolbox para Elemento Finitos y Analisis
+Matricial de Estructuras en MATLAB
+
+Propiedades de entrada modelo:
+
+Nodos: 
+Numero de nodos: 4 
+Coordenadas nodo N1: 0 0
+Coordenadas nodo N2: 800 0
+Coordenadas nodo N3: 400 400
+Coordenadas nodo N4: 400 800
+
+Elementos: 
+Numero de elementos: 6 
+Elemento E1:	Largo: 800         Area: 20        Eo: 200000    
+Elemento E2:	Largo: 565.6854    Area: 20        Eo: 200000    
+Elemento E3:	Largo: 565.6854    Area: 20        Eo: 200000    
+Elemento E4:	Largo: 894.4272    Area: 20        Eo: 200000    
+Elemento E5:	Largo: 400         Area: 20        Eo: 200000    
+Elemento E6:	Largo: 894.4272    Area: 20        Eo: 200000    
+
+Resultados del analisis:
+
+Desplazamientos nodos: 
+Desplazamientos nodo N1: 0 0
+Desplazamientos nodo N2: 0.016 0
+Desplazamientos nodo N3: 0.008 -0.013
+Desplazamientos nodo N4: 0.053 -0.016
+
+Reacciones: 
+Reacciones nodo N1: -80 -20
+Reacciones nodo N2: 0 140
+Reacciones nodo N3: 0 0
+Reacciones nodo N4: 0 0
+
+Esfuerzos Elementos: 
+Elemento E1: -78.4273       TRACCION
+Elemento E2: 23.836         COMPRESION
+Elemento E3: 23.836         COMPRESION
+Elemento E4: -41.2047       TRACCION
+Elemento E5: 33.7093        COMPRESION
+Elemento E6: 137.6807       COMPRESION
+\end{sourcecode}
+
+\begin{sourcecode}[\label{codigo-html5}]{html5}{Ejemplo en HTML5.}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Página</title>
+</head>
+<body>
+	<style>
+		.titulo {
+			color: #ff0000;
+		}
+	</style>
+	<div class="titulo">Hola</div>
+</body>
+</html>
+\end{sourcecode}
+
+\begin{sourcecode}[\label{codigo-matlab}]{matlab}{Ejemplo en Matlab.}
+% Se crea gráfico
+f = figure(1);
+hold on;
+movegui(f, 'center');
+xlabel('td/Tn'); ylabel('FAD=Umax/Uf0');
+title('Espectro de pulso de desplazamiento');
+
+for j = 1:length(BETA)
+	fad = ones(1, NDATOS); % Arreglo para el FAD, uno para cada r
+	for i = 1:NDATOS
+		[t, u_t, ~, ~] = main(BETA(j), r(i), M, K, F0, 0);
+		fad(i) = max(abs(u_t)) / uf0;
+	end
+mx = find(fad == max(fad(:)));
+fprintf('BETA=%.2f, MAX: FAD=%.3f, TD/TN=%.3f\n', BETA(j), fad(mx), tdtn(mx));
+plot(tdtn, fad, 'DisplayName', strcat('\beta=', sprintf('%.2f', BETA(j))));
+end	
+\end{sourcecode}
+
+\begin{sourcecode}[]{xml}{Ejemplo xml.}
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
+xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="points">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded" name="point">
+					<xs:complexType>
+						<xs:attribute name="x" type="xs:unsignedShort" use="required" />
+						<xs:attribute name="y" type="xs:unsignedShort" use="required" />
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
+\end{sourcecode}
+
+\begin{sourcecode}[\label{codigo-python}]{python}{Ejemplo en Python.}
+import numpy as np
+
+def incmatrix(genl1, genl2):
+m = len(genl1)
+n = len(genl2)
+M = None # Comentario 1
+VT = np.zeros((n*m, 1), int) # Comentario 2
+\end{sourcecode}
+
+\begin{sourcecode}[\label{codigo-java}]{java}{Ejemplo en Java.}
+import java.io.IOException; 
+import javax.servlet.*;
+
+// Hola mundo
+public class Hola extends GenericServlet {
+	public void service(ServletRequest request, ServletResponse response)
+	throws ServletException, IOException{
+		response.setContentType("text/html");
+		PrintWriter pw = response.getWriter();
+		pw.println("Hola, mundo!");
+		pw.close();
+	}
+}
+\end{sourcecode}
+
+\begin{sourcecode}{js}{Ejemplo en Javascript.}
+$.urlParam = function (name) {
+	let results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+	if (results == null) {
+		return null;
+	} else {
+		return decodeURI(results[1]) || 0;
+	}
+};
+\end{sourcecode}
+
+\begin{sourcecode}{json}{Un arreglo en JSON.}
+{"menu": {
+	"id": "file",
+	"value": "File",
+	"popup": {
+		"menuitem": [
+		{"value": "New", "onclick": "CreateNewDoc()"},
+		{"value": "Open", "onclick": "OpenDoc()"},
+		{"value": "Close", "onclick": "CloseDoc()"}
+		]
+	}
+}}
+\end{sourcecode}
+
+\begin{sourcecode}{latex}{Imágenes múltiples.}
+\begin{images}[\label{imagenmultiple}]{Ejemplo de imagen múltiple.}
+	\addimage{ejemplos/test-image}{width=6.5cm}{Ciudad}
+	\addimage{ejemplos/test-image-wrap}{width=5cm}{Apolo}
+	\addimage{ejemplos/test-image}{width=12cm}{Ciudad más grande}
+\end{images}
+\end{sourcecode}
+
+\newpage
+\begin{sourcecode}[\label{ejemplito-perl}]{perl}{Algo de perl.}
+#!/usr/bin/perl
+use strict;
+use warnings;
+
+# first, create your message
+use Email::MIME;
+my $message = Email::MIME->create(
+  header_str => [
+    From    => 'you@example.com',
+    To      => 'friend@example.com',
+    Subject => 'Happy birthday!',
+  ],
+  attributes => {
+    encoding => 'quoted-printable',
+    charset  => 'ISO-8859-1',
+  },
+  body_str => "Happy birthday to you!\n",
+);
+
+# send the message
+use Email::Sender::Simple qw(sendmail);
+sendmail($message);
+\end{sourcecode}
+
+\newpage
+\begin{sourcecode}{php}{Ejemplo php.}
+<?php
+$target_dir = "uploads/";
+$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+$uploadOk = 1;
+$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+// Check if image file is a actual image or fake image
+if(isset($_POST["submit"])) {
+    $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+    if($check !== false) {
+        echo "File is an image - " . $check["mime"] . ".";
+        $uploadOk = 1;
+    } else {
+        echo "File is not an image.";
+        $uploadOk = 0;
+    }
+}
+?>
+\end{sourcecode}
+
+\newpage
+\begin{sourcecode}[]{ruby}{Ejemplo con ruby.}
+class DataFile < ActiveRecord::Base
+    attr_accessor :upload
+
+  def self.save_file(upload)   
+
+    file_name = upload['datafile'].original_filename  if  (upload['datafile'] !='')    
+    file = upload['datafile'].read    
+
+    file_type = file_name.split('.').last
+    new_name_file = Time.now.to_i
+    name_folder = new_name_file
+    new_file_name_with_type = "#{new_name_file}." + file_type
+
+    image_root = "#{RAILS_CAR_IMAGES}"
+
+
+    Dir.mkdir(image_root + "#{name_folder}");
+      File.open(image_root + "#{name_folder}/" + new_file_name_with_type, "wb")  do |f|  
+        f.write(file) 
+      end
+
+  end
+end
+\end{sourcecode}
+
+\newpage
+\begin{sourcecode}{sql}{Merge two tables.}
+SELECT ChargeNum, CategoryID, SUM(Hours)
+FROM KnownHours
+GROUP BY ChargeNum, CategoryID
+UNION ALL
+SELECT ChargeNum, 'Unknown' AS CategoryID, SUM(Hours)
+FROM UnknownHours
+GROUP BY ChargeNum
+\end{sourcecode}
+
+\begin{sourcecodep}{xml}{firstnumber=100, basicstyle={\fontsize{7}{10}\selectfont\ttfamily}}{}
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
+   xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="points">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="point">
+          <xs:complexType>
+            <xs:attribute name="x" type="xs:unsignedShort" use="required" />
+            <xs:attribute name="y" type="xs:unsignedShort" use="required" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
+\end{sourcecodep}
+
+\newpage
+\begin{sourcecode}{pseudocode}{Algoritmo.}
+input: int N, int D % Comentario
+output: int // Comentario 2
+begin # key
+	LET $\gets$ 0 /* comentario 1 */
+	while N $\geq$ D /** comentario 2 */
+		N $\gets$ N - D
+		res $\gets$ res + 1      
+	end
+	return res
+end    
+\end{sourcecode}

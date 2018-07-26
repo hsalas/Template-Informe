@@ -12,12 +12,7 @@
 *.blg
 
 # Releases.
-.releases/*
 *.zip
-
-# Archivos de testeo.
-ejemplo-formulae.tex
-_test
 
 # Windows.
 desktop.ini
@@ -38,23 +33,12 @@ main.pdf
 # Ignora informe.pdf
 informe.pdf
 
-# Ignora accesos directos
-*.url
-
-# Ignora elementos web
-*.html
-js/
-stylesheets/
-
-# Estadísticas
-stats/Auxiliares/*.png
-stats/Informe/*.png
-stats/Tareas/*.png
-stats/Controles/*.png
-stats/Tesis/*.png
-
-# Subreleases
-subreleases/*
-
 # Logs
 log.txt
+
+# Distribución
+dist/
+
+# Archivos gitkeep
+*.gitkeep
+*/*.gitkeep
